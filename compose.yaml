@@ -1,0 +1,7 @@
+﻿services:
+  langgraphcompanionapi:
+    image: langgraphcompanionapi
+    build:
+      context: .
+      dockerfile: LangGraphCompanionAPI/Dockerfile
+
