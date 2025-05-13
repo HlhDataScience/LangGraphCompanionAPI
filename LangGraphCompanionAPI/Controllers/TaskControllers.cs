@@ -1,7 +1,6 @@
 using LangGraphCompanionAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace LangGraphCompanionAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -10,18 +9,14 @@ namespace LangGraphCompanionAPI.Controllers
     {
         private static readonly List<TaskItem> _tasks =
         [
-            new TaskItem { Id = 1, DueTime = DateTime.Now.AddDays(2), Name = "Prepare Presentation", IsCompleted = false },
-            new TaskItem { Id = 2, DueTime = DateTime.Now.AddDays(3), Name = "Write Report", IsCompleted = true }
+            new() { id = 1, dueDate = DateTime.Now.AddDays(2), name = "Prepare Presentation", isCompleted = false },
+            new() { id = 2, dueDate = DateTime.Now.AddDays(3), name = "Write Report", isCompleted = true }
         ];
    
-
         [HttpGet]
         public ActionResult<List<TaskItem>> Get()
         {
             return Ok(_tasks);
         }
-
-
-
     }
 }
